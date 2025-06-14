@@ -51,3 +51,20 @@ yarn full
 🌍 Frontend: http://localhost:5173
 🔗 API Backend: http://localhost:5000
 📩 Liên hệ ngay nếu bạn cần hỗ trợ! 🚀
+
+🎯 Tài Khoản Demo
+🔗 Truy cập DEMO
+👑 Admin
+Username: admin@booking.com
+
+Password: 12345678
+
+🏡 Host (Chủ Homestay)
+Username: hostdemo3@gmail.com
+
+Password: 12345678
+
+🧑‍💼 User (Khách Thuê)
+Username: user1@gmail.com
+
+Password: 12345678
