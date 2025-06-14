@@ -1,49 +1,94 @@
-🚀 HƯỚNG DẪN CÀI ĐẶT SOURCE CODE WEBSITE CHO THUÊ HOMESTAY
-1️⃣ Yêu cầu hệ thống
-🔹 Node.js >= 18.0 (Tải Node.js)
-🔹 Yarn (Trình quản lý package) (Cài đặt Yarn)
-2️⃣ Yêu cầu thông tin .env
-(Thông tin này bạn cần tự tạo, không thuộc phần hỗ trợ dịch vụ)
+# 🚀 Hướng Dẫn Cài Đặt Source Code Website Cho Thuê Homestay
 
-🔹 Kết nối MongoDB
-Xem hướng dẫn tại: Hướng dẫn tạo MongoDB
+Hướng dẫn này sẽ giúp bạn cài đặt và chạy source code cho website cho thuê homestay sử dụng **Node.js** và **Express**. Hãy làm theo các bước dưới đây để triển khai hệ thống một cách dễ dàng.
 
-Ví dụ:
+---
 
-MONGO_URI=mongodb+srv://demomedproxxxx:demomedproxxxxx@homestaycluxlys.ntflq.mongodb.net/
+## 1️⃣ Yêu Cầu Hệ Thống
 
-🔹 Cấu hình VNPAY
-Xem hướng dẫn tại: Hướng dẫn lấy config VNPAY
+Trước khi bắt đầu, hãy đảm bảo hệ thống của bạn đáp ứng các yêu cầu sau:
 
-Chỉ cần lấy được các thông tin Merchant VNPAY như trong video (phút 2:46).
+- **Node.js**: Phiên bản >= 18.0. [Tải Node.js tại đây](https://nodejs.org/).
+- **Yarn**: Trình quản lý package. [Hướng dẫn cài đặt Yarn](https://yarnpkg.com/getting-started/install).
 
-🔹 Cấu hình Firebase
-Dùng để upload ảnh, cần thông tin config Firebase.
+---
 
-3️⃣ Cài đặt source (Node.js + Express)
-📥 Tải file ZIP và giải nén thành thư mục homestay
-📂 Mở thư mục homestay, copy file .env.local và đổi tên thành .env
-✏️ Cập nhật file .env với các thông tin:
-MONGO_URI=MONGO_URI
-FIREBASE_API_KEY=FIREBASE_API_KEY
-FIREBASE_AUTH_DOMAIN=FIREBASE_AUTH_DOMAIN
-FIREBASE_APP_ID=FIREBASE_APP_ID
-FIREBASE_MESSAGING_SENDER_ID=FIREBASE_MESSAGING_SENDER_ID
-FIREBASE_PROJECT_ID=FIREBASE_PROJECT_ID
-FIREBASE_STORAGE_BUCKET=FIREBASE_STORAGE_BUCKET
-VNP_TMN_CODE=VNP_TMN_CODE
-VNP_HASH_SECRET=VNP_HASH_SECRET
+## 2️⃣ Cấu Hình File `.env`
 
-4️⃣ Cài đặt & chạy project
-📌 Mở **Terminal** hoặc **Command Prompt**, chạy các lệnh sau:
+Bạn cần tạo file `.env` với các thông tin cấu hình sau. Những thông tin này không thuộc phạm vi hỗ trợ dịch vụ, bạn cần tự chuẩn bị.
 
-# Cài đặt backend: mở thư mục homestay
+### 🔹 Kết Nối MongoDB
+- **Hướng dẫn**: Xem [Hướng dẫn tạo MongoDB](https://www.mongodb.com/docs/manual/installation/).
+- **Ví dụ**:
+  ```
+  MONGO_URI=mongodb+srv://demomedproxxxx:demomedproxxxxx@homestaycluxlys.ntflq.mongodb.net/
+  ```
+
+### 🔹 Cấu Hình VNPAY
+- **Hướng dẫn**: Xem [Hướng dẫn lấy config VNPAY](https://sandbox.vnpayment.vn/). Xem video hướng dẫn (phút 2:46) để lấy thông tin Merchant.
+- **Thông tin cần thiết**:
+  - `VNP_TMN_CODE`
+  - `VNP_HASH_SECRET`
+
+### 🔹 Cấu Hình Firebase
+- **Mục đích**: Dùng để upload ảnh.
+- **Hướng dẫn**: Xem [Hướng dẫn cấu hình Firebase](https://firebase.google.com/docs/web/setup).
+- **Thông tin cần thiết**:
+  - `FIREBASE_API_KEY`
+  - `FIREBASE_AUTH_DOMAIN`
+  - `FIREBASE_APP_ID`
+  - `FIREBASE_MESSAGING_SENDER_ID`
+  - `FIREBASE_PROJECT_ID`
+  - `FIREBASE_STORAGE_BUCKET`
+
+---
+
+## 3️⃣ Cài Đặt Source Code
+
+### Bước 1: Tải và Giải Nén
+- Tải file ZIP chứa source code và giải nén vào thư mục `homestay`.
+
+### Bước 2: Cấu Hình File `.env`
+1. Mở thư mục `homestay`.
+2. Copy file `.env.local` và đổi tên thành `.env`.
+3. Mở file `.env` và cập nhật các thông tin sau:
+   ```
+   MONGO_URI=<your_mongo_uri>
+   FIREBASE_API_KEY=<your_firebase_api_key>
+   FIREBASE_AUTH_DOMAIN=<your_firebase_auth_domain>
+   FIREBASE_APP_ID=<your_firebase_app_id>
+   FIREBASE_MESSAGING_SENDER_ID=<your_firebase_messaging_sender_id>
+   FIREBASE_PROJECT_ID=<your_firebase_project_id>
+   FIREBASE_STORAGE_BUCKET=<your_firebase_storage_bucket>
+   VNP_TMN_CODE=<your_vnp_tmn_code>
+   VNP_HASH_SECRET=<your_vnp_hash_secret>
+   ```
+
+---
+
+## 4️⃣ Cài Đặt và Chạy Dự Án
+
+### Bước 1: Cài Đặt Dependencies
+Mở **Terminal** hoặc **Command Prompt** và chạy các lệnh sau:
+
+#### Cài đặt Backend
+```bash
+# Di chuyển vào thư mục homestay
+cd homestay
 yarn install
+```
 
-# Cài đặt frontend: mở thư mục homeatay/frontend
+#### Cài đặt Frontend
+```bash
+# Di chuyển vào thư mục frontend
+cd homestay/frontend
 yarn install
+```
 
-# Khi muốn Chạy toàn bộ hệ thống (backend + frontend) mở terminal ở thư mục homestay
+### Bước 2: Chạy Toàn Bộ Hệ Thống
+```bash
+# Quay lại thư mục homestay
+cd homestay
 yarn full
 
 ✅ Sau khi hoàn tất, mở trình duyệt và truy cập:
@@ -51,20 +96,3 @@ yarn full
 🌍 Frontend: http://localhost:5173
 🔗 API Backend: http://localhost:5000
 📩 Liên hệ ngay nếu bạn cần hỗ trợ! 🚀
-
-🎯 Tài Khoản Demo
-🔗 Truy cập DEMO
-👑 Admin
-Username: admin@booking.com
-
-Password: 12345678
-
-🏡 Host (Chủ Homestay)
-Username: hostdemo3@gmail.com
-
-Password: 12345678
-
-🧑‍💼 User (Khách Thuê)
-Username: user1@gmail.com
-
-Password: 12345678
